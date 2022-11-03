@@ -6,10 +6,10 @@
 	"scripts": {
 		"test": "jest",
 		"test:watch": "jest --watchAll",
-		"test:user": "jest --verbose ",
-		"test:board": "jest --verbose ",
-		"test:chocolate": "jest --verbose ",
-		"test:other": "jest --verbose ",
+		"test:user": "jest ./tests/User --verbose ",
+		"test:board": "jest ./tests/Board --verbose ",
+		"test:chocolate": "jest ./tests/Chocolate --verbose ",
+		"test:other": "jest ./tests/other --verbose ",
 		"seed": "cd db && node seed.js",
 		"main": "cd src && node main.js"
 	},
