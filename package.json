@@ -1,25 +1,32 @@
 {
-  "name": "cheese-boards",
-  "version": "1.0.0",
-  "description": "A Sequelize DB for users to collect cheeses and place them on boards",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest --watchAll"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/MultiverseLearningProducts/cheese-boards.git"
-  },
-  "keywords": [],
-  "author": "Multiverse Learning Products",
-  "bugs": {
-    "url": "https://github.com/MultiverseLearningProducts/cheese-boards/issues"
-  },
-  "homepage": "https://github.com/MultiverseLearningProducts/cheese-boards#readme",
-  "license": "ISC",
-  "dependencies": {
-    "jest": "^29.2.2",
-    "sequelize": "^6.25.3",
-    "sqlite3": "^5.1.2"
-  }
+	"name": "cheese-boards",
+	"version": "1.0.0",
+	"description": "A Sequelize DB for users to collect cheeses and place them on boards",
+	"main": "index.js",
+	"scripts": {
+		"test": "jest",
+		"test:watch": "jest --watchAll",
+		"test:user": "jest --verbose ",
+		"test:board": "jest --verbose ",
+		"test:chocolate": "jest --verbose ",
+		"test:other": "jest --verbose ",
+		"seed": "cd db && node seed.js",
+		"main": "cd src && node main.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/MultiverseLearningProducts/cheese-boards.git"
+	},
+	"keywords": [],
+	"author": "Multiverse Learning Products",
+	"bugs": {
+		"url": "https://github.com/MultiverseLearningProducts/cheese-boards/issues"
+	},
+	"homepage": "https://github.com/MultiverseLearningProducts/cheese-boards#readme",
+	"license": "ISC",
+	"dependencies": {
+		"jest": "^29.2.2",
+		"sequelize": "^6.25.3",
+		"sqlite3": "^5.1.2"
+	}
 }
