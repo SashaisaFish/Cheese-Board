@@ -73,6 +73,9 @@ async function seed() {
 		description:
 			"Rich, dark chocolate with sweet and salty caramel inside, topped with flakes of sea salt",
 	});
+	const mysteryChocolate = await Chocolate.create({
+		title: "Mystery Chocolate"
+	});
 
 	//build boxes
 	varietyBox.addChocolates([caramelCrunch, whiteTruffle, darkSaltedCaramel])
