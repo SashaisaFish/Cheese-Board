@@ -30,9 +30,9 @@ describe("Test creating Box", () => {
 	});
 });
 
-describe("Test seed boxes", () => {
-	test("TEST", async () => {});
-});
+// describe("Test seed boxes", () => {
+// 	test("TEST", async () => {});
+// });
 
 // describe("TEST GROUP", () => {
 // 	test("TEST", async () => {});

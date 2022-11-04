@@ -75,10 +75,11 @@ describe("Test eager loading", () => {
 	});
 
 	test("A user can be loaded with their boxes", async () => {
-        await user1.addBox(customBox)
-        const findUser = await Box.findByPk(4, {include: User})
-        expect(findUser.User[0].name).toMatch("User1")
-    });
+		await user1.addBox(customBox);
+		const findUser = await Box.findByPk(4, { include: User });
+		// console.log(JSON.stringify(findUser, null, 2));
+		expect(findUser.User.name).toMatch("User1");
+	});
 
 	//   test("A chocolate can be loaded with its boxes", async () => {
 
