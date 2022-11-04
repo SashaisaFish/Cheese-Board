@@ -1,9 +1,9 @@
 const {DataTypes, Model} = require('sequelize')
 const db = require('../db/db')
 
-class Board extends Model {}
+class Box extends Model {}
 
-Board.init(
+Box.init(
 	{
 		id: {
 			type: DataTypes.INTEGER,
@@ -16,7 +16,7 @@ Board.init(
 		},
 		description: {
 			type: DataTypes.STRING,
-			defaultValue: "A board of chocolate",
+			defaultValue: "A box of chocolates",
 		},
 		rating: {
 			type: DataTypes.INTEGER,
@@ -27,4 +27,4 @@ Board.init(
 );
 
 
-module.exports = Board
+module.exports = Box

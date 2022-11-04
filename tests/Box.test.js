@@ -1,29 +1,29 @@
-const Board = require("../model/board.model");
+const Box = require("../model/Box.model");
 const db = require("../db/db");
 
 beforeAll(async () => {
-	await Board.sync({ force: true });
-	await Board.create({
+	await Box.sync({ force: true });
+	await Box.create({
       type: "Variety",
       description: "A mix of many different types of chocolates",
       rating: 9
 	});
 });
 
-test("Can initialise board type", async () => {
-	const test = await Board.findOne({ where: { type: "Variety" } });
+test("Can initialise Box type", async () => {
+	const test = await Box.findOne({ where: { type: "Variety" } });
 	expect(test.getDataValue("type")).toMatch("Variety");
 });
 
-test("Can initialise board description", async () => {
-	const test = await Board.findOne({ where: { type: "Variety" } });
+test("Can initialise Box description", async () => {
+	const test = await Box.findOne({ where: { type: "Variety" } });
 	expect(test.getDataValue("description")).toMatch(
 		"A mix of many different types of chocolates"
 	);
 });
 
-test("Can initialise board rating", async () => {
-	const test = await Board.findOne({ where: { type: "Variety" } });
+test("Can initialise Box rating", async () => {
+	const test = await Box.findOne({ where: { type: "Variety" } });
 	expect(test.getDataValue("rating")).toBe(9);
 });
 

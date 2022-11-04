@@ -1,4 +1,4 @@
-const Board = require("./board.model");
+const Board = require("./box.model");
 const Chocolate = require("./chocolate.model");
 const User = require("./user.model");
 
