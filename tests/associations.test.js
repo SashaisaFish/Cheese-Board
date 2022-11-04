@@ -74,9 +74,15 @@ describe("Test eager loading", () => {
 		].sort());
 	});
 
-	//   test("A user can be loaded with their boxes", async () => {});
+	test("A user can be loaded with their boxes", async () => {
+        await user1.addBox(customBox)
+        const findUser = await Box.findByPk(4, {include: User})
+        expect(findUser.User[0].name).toMatch("User1")
+    });
 
-	//   test("A cheese can be loaded with its boxes", async () => {});
+	//   test("A chocolate can be loaded with its boxes", async () => {
+
+    //});
 });
 
 // describe("TEST GROUP", () => {
