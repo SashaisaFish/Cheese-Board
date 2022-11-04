@@ -60,6 +60,7 @@ describe("Test eager loading", () => {
         await mysteryChocolate.addBox(customBox)
 		const findMystery = await Chocolate.findByPk(8, { include: Box });
 		//console.log(JSON.stringify(findMystery, null, 2));
+        // many-to-many relationship so returns an array of objects - need to use plural Boxes and specify index even if there is only 1
 		expect(findMystery.Boxes[0].type).toMatch("Custom")
 	});
 
@@ -78,12 +79,17 @@ describe("Test eager loading", () => {
 		await user1.addBox(customBox);
 		const findUser = await Box.findByPk(4, { include: User });
 		// console.log(JSON.stringify(findUser, null, 2));
+        // one-to-many relationship so returns only one User object and uses singular User
 		expect(findUser.User.name).toMatch("User1");
 	});
 
-	//   test("A chocolate can be loaded with its boxes", async () => {
-
-    //});
+	test("A chocolate can be loaded with its boxes", async () => {
+		await customBox.addChocolate(mysteryChocolate);
+		const findChocolate = await Box.findByPk(4, { include: Chocolate });
+		//console.log(JSON.stringify(findChocolate, null, 2));
+		// many-to-many relationship so returns an array of objects - need to use plural Chocolates and specify index even if there is only 1
+		expect(findChocolate.Chocolates[0].title).toMatch("Mystery Chocolate");
+	});
 });
 
 // describe("TEST GROUP", () => {
