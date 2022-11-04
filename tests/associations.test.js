@@ -26,7 +26,7 @@ beforeAll(async () => {
 });
 
 describe("Test associations", () => {
-	beforeEach(async () => seed());
+	beforeEach(async () => await seed());
 
 	test("A user can own many boxes", async () => {
 		await user1.addBoxes([varietyBox, milkBox, darkBox]);
@@ -52,11 +52,15 @@ describe("Test associations", () => {
 });
 
 describe("Test eager loading", () => {
-	beforeEach(() => seed());
+	beforeEach(async() => await seed());
 
 	test("A single box can be loaded with one chocolate", async () => {
-		const findDark = await Chocolate.findOne(
-			{ where: { title: "Dark Truffle" } },
+		// const findDark = await Chocolate.findOne(
+		// 	{ where: { title: "Dark Truffle" } },
+		// 	{ include: Box }
+		// );
+        const findDark = await Chocolate.findByPk(
+			5,
 			{ include: Box }
 		);
 		console.log(JSON.stringify(findDark, null, 2));
