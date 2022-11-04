@@ -30,6 +30,7 @@ describe("Test associations", () => {
 
 	test("A user can own many boxes", async () => {
 		await user1.addBoxes([varietyBox, milkBox, darkBox]);
+        // might be easier to use count boxes and expect boxes to be 3
 		const boxes = await user1.getBoxes();
 		expect(boxes.map((b) => b.type)).toEqual(["Variety", "Milk", "Dark"]);
 	});
