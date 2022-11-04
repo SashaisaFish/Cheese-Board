@@ -9,7 +9,7 @@
 		"test:user": "jest ./tests/User --verbose ",
 		"test:box": "jest ./tests/Box --verbose ",
 		"test:chocolate": "jest ./tests/Chocolate --verbose ",
-		"test:other": "jest ./tests/other --verbose ",
+		"test:assoc": "jest ./tests/associations --verbose ",
 		"seed": "cd db && node seed.js",
 		"main": "cd src && node main.js"
 	},

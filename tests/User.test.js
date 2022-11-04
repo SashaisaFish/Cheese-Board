@@ -1,6 +1,8 @@
 const User = require("../model/user.model");
 const db = require("../db/db");
+const {seed} = require("../db/seed");
 
+describe("Test creating User", () => {
 beforeAll(async () => {
 	await User.sync({ force: true });
 	await User.create({
@@ -18,7 +20,9 @@ test("Can initialise user email", async () => {
 	const test = await User.findOne({ where: { name: "User1" } });
 	expect(test.getDataValue("email")).toMatch("user1@email.com");
 });
+})
 
-// describe("TEST GROUP", async () => {
+// describe("TEST GROUP", () => {
 // 	test("TEST", async () => {});
 // });
+
