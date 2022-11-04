@@ -1,4 +1,4 @@
-const {User, Board, Chocolate} = require('../model')
+const {User, Box, Chocolate} = require('../model')
 
 async function seed () {
 
@@ -22,7 +22,7 @@ async function seed () {
 		}
 	]);
 
-  await Board.bulkCreate([
+  await Box.bulkCreate([
     {
       type: "Variety",
       description: "A mix of many different types of chocolates",
@@ -65,3 +65,5 @@ async function seed () {
 
 
 }
+
+module.exports = seed()

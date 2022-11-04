@@ -1,13 +1,13 @@
-const Board = require("./box.model");
+const Box = require("./box.model");
 const Chocolate = require("./chocolate.model");
 const User = require("./user.model");
 
 // User <-> Board
-User.hasMany(Board);
-Board.belongsTo(User);
+User.hasMany(Box);
+Box.belongsTo(User);
 
-// Board <-> Chocolate
-Board.belongsToMany(Chocolate, { through: "Chocolate_Board" });
-Chocolate.belongsToMany(Board, { through: "Chocolate_Board" });
+// Box <-> Chocolate
+Box.belongsToMany(Chocolate, { through: "Chocolate_Box" });
+Chocolate.belongsToMany(Box, { through: "Chocolate_Box" });
 
-module.exports = { Board, Chocolate, User };
+module.exports = { Box, Chocolate, User };
