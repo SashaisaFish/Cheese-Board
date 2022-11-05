@@ -5,6 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"test": "jest --runInBand",
+		"test:coverage": "jest --runInBand --coverage",
 		"test:user": "jest ./tests/User --verbose ",
 		"test:box": "jest ./tests/Box --verbose ",
 		"test:chocolate": "jest ./tests/Chocolate --verbose ",
